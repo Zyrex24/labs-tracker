@@ -1,51 +1,54 @@
 # Labs Tracker
 
-A 100% offline Flutter app for iOS & Android that tracks lab attendance, sick notes, make-up sessions, and exam eligibility with a beautiful glassmorphism design.
+A 100% offline Flutter app for iOS and Android that tracks lab attendance, sick notes, make-up sessions, and exam eligibility with a glassmorphism design.
 
 ![Flutter](https://img.shields.io/badge/Flutter-3.24-02569B?logo=flutter)
 ![Dart](https://img.shields.io/badge/Dart-3.1+-0175C2?logo=dart)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![CI](https://github.com/YOUR_USERNAME/labs_tracker/workflows/Flutter%20CI/badge.svg)
+![CI](https://github.com/Zyrex24/labs-tracker/workflows/Flutter%20CI/badge.svg)
 
-## ✨ Features
+## Features
 
-### Core Functionality
-- **📚 Subject Management**: Track multiple subjects with required lab counts
-- **📅 Lab Sessions**: Schedule regular and make-up lab sessions
-- **✅ Attendance Tracking**: Mark sessions as attended, missed, or submit sick notes
-- **🏥 Sick Notes**: Attach photos/PDFs of sick notes and auto-create make-up sessions
-- **📝 Make-up Sessions**: Schedule and track make-up lab attendance
-- **🎓 Exam Management**: Track exam dates and registration status
-- **📊 Summary & Reports**: View eligibility status and export PDF summaries
-- **🔔 Notifications**: Get reminders for upcoming lab sessions
-- **💾 Backup & Restore**: Export/import all data including attachments
+### Core functionality
 
-### Technical Highlights
-- **100% Offline**: No network calls, no analytics, no remote services
-- **Clean Architecture**: Separation of concerns with repositories, DAOs, and state management
-- **Riverpod State Management**: Reactive, testable state management
-- **Drift (SQLite)**: Local database with migrations and type-safe queries
-- **Glassmorphism UI**: Modern, beautiful frosted glass design with animated gradients
-- **Null Safety**: Full null safety support
-- **Production Ready**: Error handling, validation, and user feedback
+- Subject management with required lab counts  
+- Lab sessions: schedule regular and make-up sessions  
+- Attendance tracking: mark sessions as attended or missed; submit sick notes  
+- Sick notes: attach photos/PDFs and auto-create make-up sessions  
+- Make-up sessions: schedule and track attendance  
+- Exam management: track exam dates and registration status  
+- Summary and reports: eligibility status and PDF export  
+- Notifications: reminders for upcoming sessions  
+- Backup and restore: export/import all data including attachments
 
-## 🎨 Design
+### Technical highlights
 
-The app features a stunning **glassmorphism** design with:
-- Frosted glass surfaces with backdrop blur
-- Animated gradient backgrounds
-- Translucent cards and chips
-- Smooth transitions and animations
-- Light/dark mode support
+- 100% offline: no network calls, no analytics, no remote services  
+- Clean architecture with repositories, DAOs, and state management  
+- Riverpod for state management  
+- Drift (SQLite) with migrations and type-safe queries  
+- Glassmorphism UI with animated gradients  
+- Null safety throughout  
+- Production-ready error handling, validation, and user feedback
 
-## 🏗️ Architecture
+## Design
+
+The UI uses a glassmorphism style:
+
+- Frosted glass surfaces with backdrop blur  
+- Animated gradient backgrounds  
+- Translucent cards and chips  
+- Smooth transitions and animations  
+- Light and dark mode support
+
+## Architecture
 
 ```
 lib/
 ├── app/                    # App-level configuration
 │   ├── glass/             # Glassmorphism widgets
 │   ├── router/            # Navigation
-│   └── theme/             # Gradients & glass theme
+│   └── theme/             # Gradients and glass theme
 ├── core/                   # Core utilities
 │   ├── constants/         # App constants
 │   ├── notifications/     # Notification service
@@ -64,65 +67,74 @@ lib/
 │   ├── settings/          # App settings
 │   ├── sicknotes/         # Sick notes
 │   ├── subjects/          # Subjects management
-│   └── summary/           # Summary & PDF export
+│   └── summary/           # Summary and PDF export
 └── main.dart
 ```
 
-## 📦 Dependencies
+## Dependencies
 
 ### Core
-- `flutter_hooks` & `hooks_riverpod` - State management
-- `drift` & `sqlite3_flutter_libs` - Local database
-- `path_provider` - File storage
+
+- `flutter_hooks`, `hooks_riverpod`  
+- `drift`, `sqlite3_flutter_libs`  
+- `path_provider`
 
 ### Features
-- `file_picker` & `image_picker` - File selection
-- `flutter_local_notifications` & `timezone` - Notifications
-- `archive` & `share_plus` - Backup/restore
-- `pdf` & `printing` - PDF generation
+
+- `file_picker`, `image_picker`  
+- `flutter_local_notifications`, `timezone`  
+- `archive`, `share_plus`  
+- `pdf`, `printing`
 
 ### Utilities
-- `intl` - Internationalization
-- `uuid` - Unique IDs
 
-## 🚀 Getting Started
+- `intl`  
+- `uuid`
+
+## Getting started
 
 ### Prerequisites
-- Flutter SDK 3.24 or higher
-- Dart SDK 3.1 or higher
-- Android Studio (SDK + AVD for Android builds)
-- Xcode (Mac only, for iOS builds)
+
+- Flutter SDK 3.24 or higher  
+- Dart SDK 3.1 or higher  
+- Android Studio (SDK and AVD for Android builds)  
+- Xcode (macOS only, for iOS builds)
 
 ### Installation
 
-1. **Clone the repository**
+1. Clone the repository
+
    ```bash
-   git clone https://github.com/YOUR_USERNAME/labs_tracker.git
-   cd labs_tracker
+   git clone https://github.com/Zyrex24/labs-tracker.git
+   cd labs-tracker
    ```
 
-2. **Install dependencies**
+2. Install dependencies
+
    ```bash
    flutter pub get
    ```
 
-3. **Generate Drift code**
+3. Generate Drift code
+
    ```bash
    dart run build_runner build --delete-conflicting-outputs
    ```
 
-4. **Run the app**
+4. Run the app
+
    ```bash
    flutter run
    ```
 
-### Building for Release
+## Building for release
 
-#### Android
+### Android
+
 For local signed builds, see `android/README_SIGNING.md` for keystore setup.
 
 ```bash
-# Unsigned APK (for testing)
+# Unsigned APK (testing)
 flutter build apk --release
 
 # Signed APK (requires key.properties)
@@ -132,7 +144,8 @@ flutter build apk --release
 flutter build appbundle --release
 ```
 
-#### iOS (Mac only)
+### iOS (macOS only)
+
 See `ios/README_SIGNING.md` for signing setup.
 
 ```bash
@@ -143,87 +156,100 @@ flutter build ipa --no-codesign
 flutter build ipa --release
 ```
 
-## 🎯 Usage
+## Usage
 
-### 1. Add Subjects
-- Tap the "+" button on the Subjects screen
-- Enter subject name, code, and required lab count
+1. Add subjects
 
-### 2. Schedule Lab Sessions
-- Navigate to a subject
-- Tap "Add Session"
-- Set date, time, location, and slot
+   Use the Subjects screen to add name, code, and required lab count.
 
-### 3. Track Attendance
-- Sessions become "Due" within the configured window (default ±2 hours)
-- Mark as Attended or Missed
-- Submit sick notes with photo/PDF attachments
+2. Schedule lab sessions
 
-### 4. Handle Sick Notes
-- When you submit a sick note, a make-up session is auto-created
-- Schedule the make-up session date/time
-- Mark the make-up session as attended when complete
+   In a subject, add regular sessions with date, time, location, and slot.
 
-### 5. View Summary
-- Check eligibility status per subject
-- Export PDF summary for records
-- View exam registration status
+3. Track attendance
 
-### 6. Backup & Restore
-- Export: Creates a ZIP with database JSON and attachments
-- Import: Restores all data from a backup ZIP
+   Sessions become "Due" within the configured window (default ±2 hours).
 
-## 🧪 Testing
+   Mark as Attended or Missed, or submit a sick note with an attachment.
 
-### Run all tests
+4. Handle sick notes
+
+   Submitting a sick note auto-creates a make-up session.
+
+   Schedule the make-up date/time and mark it as attended when completed.
+
+5. View summary
+
+   Review eligibility per subject and export a PDF summary.
+
+   Track exam registration status.
+
+6. Backup and restore
+
+   Export creates a ZIP with database JSON and attachments.
+
+   Import restores all data from a ZIP.
+
+## Testing
+
+Run all tests:
+
 ```bash
 flutter test
 ```
 
-### Run specific test files
+Run specific tests:
+
 ```bash
 flutter test test/unit/attendance_state_machine_test.dart
 flutter test test/widget/subject_crud_test.dart
 ```
 
-### Test Coverage
-- Unit tests for state machine and business logic
-- Widget tests for key user flows
-- DAO tests for database operations
+Coverage includes:
 
-## 📱 Platform Support
+* Unit tests for the state machine and business logic
+* Widget tests for main user flows
+* DAO tests for database operations
 
-| Platform | Minimum Version | Target Version |
-|----------|----------------|----------------|
-| Android  | API 21 (5.0)   | API 34 (14.0)  |
-| iOS      | 13.0           | Latest         |
+## Platform support
 
-## 🔒 Privacy
+| Platform | Minimum version | Target version |
+| -------- | --------------- | -------------- |
+| Android  | API 21 (5.0)    | API 34 (14.0)  |
+| iOS      | 13.0            | Latest         |
 
-Labs Tracker is **100% offline** and respects your privacy:
-- ✅ No internet connection required
-- ✅ No analytics or tracking
-- ✅ No data sent to external servers
-- ✅ All data stored locally on your device
-- ✅ No network permissions in manifests (verified in CI)
+## Privacy
 
-## 🔄 Continuous Integration
+Labs Tracker is offline-only:
 
-GitHub Actions automatically builds an unsigned release APK on every push to verify the project compiles:
-- Workflow: `.github/workflows/flutter-ci.yml`
-- Artifacts available in Actions tab after each run
-- No signing keys required for CI builds
+* No internet connection required
+* No analytics or tracking
+* No data sent to external servers
+* All data stored locally on the device
+* No network permissions in manifests (verified in CI)
 
-## 🛠️ Development
+## Continuous integration
 
-### Code Generation
-When you modify Drift tables or DAOs, regenerate code:
+GitHub Actions builds an unsigned release APK on every push to verify the project compiles:
+
+* Workflow: `.github/workflows/flutter-ci.yml`
+* Artifacts are available in the Actions tab after each run
+* No signing keys required for CI builds
+
+## Development
+
+### Code generation
+
+When modifying Drift tables or DAOs:
+
 ```bash
 dart run build_runner build --delete-conflicting-outputs
 ```
 
-### Database Migrations
-Migrations are defined in `lib/data/db/app_database.dart`. Example:
+### Database migrations
+
+Migrations live in `lib/data/db/app_database.dart`. Example:
+
 ```dart
 onUpgrade: (Migrator m, int from, int to) async {
   if (from == 1 && to == 2) {
@@ -232,16 +258,17 @@ onUpgrade: (Migrator m, int from, int to) async {
 }
 ```
 
-### Adding New Features
-1. Create feature folder in `lib/features/`
-2. Add screen, widgets, and dialogs
-3. Create repository if needed
+### Adding new features
+
+1. Create a feature folder in `lib/features/`
+2. Add screens, widgets, and dialogs
+3. Create a repository if needed
 4. Add Riverpod providers
 5. Wire up navigation
 
-## 📝 State Machine
+## State machine
 
-The app uses a pure state machine for attendance status transitions:
+Attendance status transitions:
 
 ```
 not_ready → due → attended
@@ -249,14 +276,17 @@ not_ready → due → attended
 ```
 
 Rules:
-- Sessions become "due" within the configured window (±N hours)
-- Sick note submission auto-creates a make-up session
-- Eligibility = (attended + makeup_attended) >= labs_required
 
-## 🎨 Customization
+* Sessions enter "due" within the configured window (±N hours)
+* Sick note submission auto-creates a make-up session
+* Eligibility: (attended + makeup_attended) ≥ labs_required
+
+## Customization
 
 ### Gradients
-Edit `lib/app/theme/gradients.dart` to customize background gradients:
+
+Edit `lib/app/theme/gradients.dart`:
+
 ```dart
 static const primary = LinearGradient(
   colors: [Color(0xFF6A85F1), Color(0xFFB06AB3)],
@@ -265,17 +295,20 @@ static const primary = LinearGradient(
 );
 ```
 
-### Glass Theme
-Adjust opacity, blur, and colors in `lib/app/theme/glass_theme.dart`:
+### Glass theme
+
+Adjust opacity, blur, and radii in `lib/app/theme/glass_theme.dart`:
+
 ```dart
 static const double opacityElevation1 = 0.12;
 static const double blurMedium = 16.0;
 static const double radiusLarge = 20.0;
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
-### Build Runner Issues
+### Build runner
+
 ```bash
 flutter clean
 flutter pub get
@@ -283,37 +316,34 @@ dart run build_runner clean
 dart run build_runner build --delete-conflicting-outputs
 ```
 
-### Database Issues
-- Delete app data and reinstall
-- Check migration logic in `app_database.dart`
+### Database
 
-### Notification Issues
-- Ensure permissions are granted in device settings
-- Check timezone initialization in `main.dart`
+* Delete app data and reinstall
+* Review migration logic in `app_database.dart`
 
-## 📄 License
+### Notifications
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+* Ensure permissions are granted in device settings
+* Check timezone initialization in `main.dart`
 
-## 🤝 Contributing
+## License
 
-Contributions are welcome! Please follow these guidelines:
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit changes: `git commit -m "Describe your change"`
+4. Push the branch: `git push origin feature/your-feature`
+5. Open a pull request
 
-**Important:**
-- Do NOT commit signing keys, keystores, or `key.properties`
-- Run `dart run build_runner build` after modifying Drift tables
-- Ensure CI passes before requesting review
+Do not commit signing keys, keystores, or `key.properties`.
 
-## 📧 Support
+Run `dart run build_runner build` after modifying Drift tables.
 
-For issues, questions, or suggestions, please open an issue on GitHub.
+Ensure CI passes before requesting review.
 
----
+## Support
 
-**Built with ❤️ using Flutter**
+For issues or questions, open an issue on GitHub.
