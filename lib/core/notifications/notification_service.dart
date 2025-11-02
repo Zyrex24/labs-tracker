@@ -60,10 +60,20 @@ class NotificationService {
       );
     }
 
-    final androidPlugin = _notifications.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final dynamic androidPlugin =
+        _notifications.resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>();
     if (androidPlugin != null) {
-      await androidPlugin.requestNotificationsPermission();
+      try {
+        await androidPlugin.requestPermission();
+      } on NoSuchMethodError {
+        try {
+          await androidPlugin.requestNotificationsPermission();
+        } on NoSuchMethodError {
+          // ignore when the underlying platform implementation does not expose
+          // either permission request API (older Android versions).
+        }
+      }
     }
   }
 
