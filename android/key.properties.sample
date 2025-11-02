@@ -1,0 +1,5 @@
+storeFile=/absolute/path/to/your/labs.jks
+storePassword=CHANGE_ME
+keyAlias=labs
+keyPassword=CHANGE_ME
+

@@ -1,0 +1,41 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+build/
+coverage/
+android/.gradle/
+android/.idea/
+android/local.properties
+**/GeneratedPluginRegistrant.*
+**/FlutterGeneratedPlugins.*
+**/*.g.dart
+
+# iOS/macOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework
+ios/Flutter/Generated.xcconfig
+ios/Runner/GeneratedPluginRegistrant.*
+*.xcworkspace
+*.xcuserdatad/
+*.xcuserdata/
+
+# IDE
+.vscode/
+.idea/
+
+# Signing / secrets
+**/*.keystore
+**/*.jks
+**/key.properties
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Archives / exports
+*.ipa
+*.apk
+*.aab
+*.zip
